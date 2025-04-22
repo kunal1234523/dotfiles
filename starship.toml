@@ -1,0 +1,192 @@
+# format = """
+# [┌───](peach)\
+# [$sudo](fg:yellow bg:lavender)\
+# [](fg:lavender bg:teal)\
+# [$python](fg:yellow bg:teal)\
+# [$conda](fg:yellow bg:teal)\
+# [](fg:teal bg:charcoal)\
+# [$directory](fg:yellow bg:charcoal)\
+# [](fg:charcoal)\
+# $fill\
+# [](fg:charcoal)\
+# [$git_branch](fg:yellow bg:charcoal)\
+# [$git_status](fg:red bg:charcoal)\
+# [](fg:teal bg:charcoal)\
+# [$time](fg:yellow bg:teal)\n\
+# [└─](peach)$character"""
+
+
+# format = """
+# [┌───](orange)\
+# [](fg:background)\
+# [$sudo](fg:orange bg:background)\
+# [█](fg:background)\
+# [$python](fg:green bg:background)\
+# [$conda](fg:green bg:background)\
+# [█](fg:background)\
+# [$directory](fg:blue bg:background)\
+# [█](fg:background)\
+# $fill\
+# [█](fg:background)\
+# [$git_branch](fg:blue bg:background)\
+# [$git_status](fg:blue bg:background)\
+# [█](fg:background )\
+# [$time](fg:green bg:background)\
+# [█](fg:background)\n\
+# [└─](orange)$character"""
+
+format = """
+[$sudo](fg:red)\
+[$python](fg:blue)\
+[$conda](fg:purple)\
+[$directory](fg:yellow)\
+[$git_branch](fg:green)\
+$fill\
+[$git_status](fg:cyan)\
+[$time](fg:white)\n\
+$character"""
+
+# right_format = "Ubuntu:20.04"
+
+palette = 'my3'
+add_newline = false
+
+
+[palettes.my]
+blue = "#1E3A8A"
+yellow = "#B88B00"
+green = "#3B7D28"
+grey = "#2F3336"
+copper = "#B87333"
+cloud = "#4B5D67"
+black = "#101820"
+white = "#F7F7F7"
+
+[palettes.my1]
+lavender = "#6a4c9c"
+coral = "#9f4a3b"
+rose = "#9c5a5a"
+teal = "#2f4f4f"
+mustard = "#9e7a00"
+sage = "#6a7f6a"
+peach = "#9a6d61"
+charcoal = "#2a2a2a"
+yellow = "#b88b00"
+blue = "#1e3a8a"
+
+[palettes.my2]
+background = '#242424'
+orange = '#ffbb00'
+green = '#33dd2d'
+blue = '#3a86ff'
+
+[palettes.my3]
+red = '#f7768e'
+blue = '#7aa2f7'
+purple = '#bb9af7'
+yello = '#e0af68'
+green = '#41a6b5'
+cyan = '#7dcfff"'
+white = '#acb0d0'
+
+
+[directory]
+format = "$path "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+# always_show_remote = true
+symbol = " "
+truncation_length = 20
+format = '$symbol\($branch\) '
+
+[git_status]
+conflicted = 'MC'
+up_to_date = 'Y'
+untracked = 'U'
+modified = 'M'
+renamed = 'R'
+format = '( $all_status$ahead_behind)'
+
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[conda]
+format = ' $symbol$environment '
+ignore_base = false
+
+[sudo]
+symbol = "󰪋 "
+format = '$symbol'
+disabled = false
+
+[time]
+disabled = false
+time_format = "%R"
+utc_time_offset = "+5.50"
+use_12hr = true
+format =  '  $time'
+
+[fill]
+style = "#444444"
+symbol = "─"
+
+# [fill]
+# style = "orange"
+# symbol = " "
+
+[username]
+disabled = false
+show_always = true
+format = '$user'
+
+[hostname]
+ssh_only = false
+format = '$hostname'
+
+[character]
+format = '$symbol '
+# success_symbol = '[ ](bold green)'
+# success_symbol = '[](bold green)'
+success_symbol = '[➜ ](bold blue)'
+# error_symbol = '[ ](bold red)'
+# error_symbol = '[](bold red)'
+error_symbol = '[➜ ](bold red)'
+
+[python]
+# format = '$symbol$version $virtualenv$pyenv_prefix'
+format = '($symbol$virtualenv$pyenv_prefix )'
+version_format = 'v${major}.${minor}'
+python_binary = 'python3'
+symbol = '  '
+# format = '$symbol${pyenv_prefix}${version}$virtualenv'
+
+# ▌	lB	258C	9612	LEFT HALF BLOCK
+# █	FB	2588	9608	FULL BLOCK
+# ┃	VV	2503	9475	BOX DRAWINGS HEAVY VERTICAL
+# ➜ 
