@@ -249,7 +249,7 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+    {'NMAC427/guess-indent.nvim', opts={}}, -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -824,7 +824,7 @@ require('lazy').setup({
     opts = {
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions
-        --   <c-y> to accept ([y]es) the completion.
+        --   <c-y> to accept ([y]es) the completion.init
         --    This will auto-import if your LSP supports it.
         --    This will expand snippets if the LSP sent a snippet.
         -- 'super-tab' for tab to accept
@@ -1058,6 +1058,15 @@ require('lazy').setup({
   },
   { 'nuvic/flexoki-nvim', name = 'flexoki' },
   { 'rebelot/kanagawa.nvim' },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
@@ -1125,7 +1134,7 @@ vim.keymap.set('i', '<leader>nl', ':Neotree left<CR>')
 vim.keymap.set('i', '<leader>nr', ':Neotree right<CR>')
 
 vim.keymap.set('n', '<leader>T', ':vs+te<CR>a')
-vim.opt.colorcolumn = '79'
+-- vim.opt.colorcolumn = '79'
 vim.cmd 'autocmd TermOpen * setlocal nonumber norelativenumber'
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
